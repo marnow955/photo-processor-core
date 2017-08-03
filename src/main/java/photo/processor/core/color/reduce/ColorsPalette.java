@@ -1,4 +1,4 @@
-package photo.processor.core;
+package photo.processor.core.color.reduce;
 
 import java.awt.*;
 

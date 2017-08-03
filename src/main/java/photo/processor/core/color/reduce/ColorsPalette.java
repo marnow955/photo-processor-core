@@ -27,6 +27,15 @@ class ColorsPalette {
         generatePalette();
     }
 
+    Color findNearestColor(Color color){
+        int nearestColorIndex = 0;
+        for (int i=1; i<palette.length; i++) {
+            if (diff(palette[i],color)<diff(palette[nearestColorIndex],color))
+                nearestColorIndex = i;
+        }
+        return palette[nearestColorIndex];
+    }
+
     private boolean numberOfLevelsValidate(int numberOfLevels) {
         return numberOfLevels >= 2 && numberOfLevels <= 256;
     }
@@ -47,6 +56,14 @@ class ColorsPalette {
                 }
             }
         }
+    }
+
+    private int diff(Color paletteColor, Color color) {
+        return  (int)(
+                Math.pow(paletteColor.getRed()-color.getRed(),2) +
+                        Math.pow(paletteColor.getGreen()-color.getGreen(),2) +
+                        Math.pow(paletteColor.getBlue()-color.getBlue(),2)
+        );
     }
 
 }

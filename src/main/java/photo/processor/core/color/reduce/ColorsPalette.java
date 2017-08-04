@@ -2,24 +2,24 @@ package photo.processor.core.color.reduce;
 
 import java.awt.*;
 
-class ColorsPalette {
+public class ColorsPalette {
 
     private int numberOfLevels;
     private Color[] palette;
 
-    ColorsPalette(int numberOfLevels) throws IllegalArgumentException {
+    public ColorsPalette(int numberOfLevels) throws IllegalArgumentException {
         setNumberOfLevels(numberOfLevels);
     }
 
-    Color[] getPalette() {
+    public Color[] getPalette() {
         return palette;
     }
 
-    int getNumberOfLevels() {
+    public int getNumberOfLevels() {
         return numberOfLevels;
     }
 
-    void setNumberOfLevels(int numberOfLevels) throws IllegalArgumentException {
+    public void setNumberOfLevels(int numberOfLevels) throws IllegalArgumentException {
         if (!numberOfLevelsValidate(numberOfLevels)) {
             throw new IllegalArgumentException("ColorsPalette can have only 2-256 levels");
         }
@@ -27,7 +27,7 @@ class ColorsPalette {
         generatePalette();
     }
 
-    Color findNearestColor(Color color){
+    public Color findNearestColor(Color color){
         int nearestColorIndex = 0;
         for (int i=1; i<palette.length; i++) {
             if (diff(palette[i],color)<diff(palette[nearestColorIndex],color))

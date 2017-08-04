@@ -6,6 +6,8 @@ import photo.processor.core.color.reduce.RGBErrors;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static photo.processor.core.color.reduce.RGBValuesValidator.validate;
+
 public abstract class Dithering extends NearestColor {
 
     protected RGBErrors[][] errorTab;
@@ -41,15 +43,6 @@ public abstract class Dithering extends NearestColor {
         int b = validate(color.getBlue() + currentError.getBlueError());
 
         return new Color(r, g, b);
-    }
-
-    private int validate(int rgbValue) {
-        if (rgbValue < 0)
-            return 0;
-        else if (rgbValue > 255)
-            return 255;
-        else
-            return rgbValue;
     }
 
     private RGBErrors subColors(Color minuend, Color subtrahend) {

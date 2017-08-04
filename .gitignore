@@ -1,5 +1,5 @@
 # IDEA Project files
 .idea/
 *.iml
-target/
+target/*
 !target/*.jar

@@ -12,6 +12,14 @@ public abstract class Dithering extends NearestColor {
 
     protected RGBErrors[][] errorTab;
 
+    public Dithering() {
+        super();
+    }
+
+    public Dithering(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     protected void init(BufferedImage image) {
         super.init(image);

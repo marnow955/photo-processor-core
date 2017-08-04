@@ -4,6 +4,14 @@ import photo.processor.core.color.reduce.RGBErrors;
 
 public class AtkinsonDithering extends Dithering {
 
+    public AtkinsonDithering() {
+        super();
+    }
+
+    public AtkinsonDithering(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     void propagation(int x, int y, RGBErrors currentError) {
         if (x<width-1)

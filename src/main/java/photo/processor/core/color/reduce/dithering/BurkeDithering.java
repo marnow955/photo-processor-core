@@ -4,6 +4,14 @@ import photo.processor.core.color.reduce.RGBErrors;
 
 public class BurkeDithering extends Dithering {
 
+    public BurkeDithering() {
+        super();
+    }
+
+    public BurkeDithering(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     void propagation(int x, int y, RGBErrors currentError) {
         if (x < width - 1)

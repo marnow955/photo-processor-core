@@ -4,6 +4,14 @@ import java.awt.*;
 
 public abstract class SignalNoiseApproximation extends NearestColor {
 
+    public SignalNoiseApproximation() {
+        super();
+    }
+
+    public SignalNoiseApproximation(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     protected void transform() {
         for (int y = 0; y < height; y++) {

@@ -4,6 +4,14 @@ import photo.processor.core.color.reduce.RGBErrors;
 
 public class Sierra2Dithering extends Dithering {
 
+    public Sierra2Dithering() {
+        super();
+    }
+
+    public Sierra2Dithering(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     void propagation(int x, int y, RGBErrors currentError) {
         if (x<width-1)

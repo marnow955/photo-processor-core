@@ -10,6 +10,14 @@ public class SineSignalNoiseApproximation extends SignalNoiseApproximation {
     private int alfaRate = 128;
     private int betaRate = 128;
 
+    public SineSignalNoiseApproximation() {
+        super();
+    }
+
+    public SineSignalNoiseApproximation(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     Color calculateColorWithNoise(Color color, int x, int y) {
         double noiseRate = aRate * Math.sin(alfaRate * x) * Math.sin(betaRate * y);

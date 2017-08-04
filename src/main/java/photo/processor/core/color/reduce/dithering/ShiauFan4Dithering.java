@@ -4,6 +4,14 @@ import photo.processor.core.color.reduce.RGBErrors;
 
 public class ShiauFan4Dithering extends Dithering {
 
+    public ShiauFan4Dithering() {
+        super();
+    }
+
+    public ShiauFan4Dithering(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     void propagation(int x, int y, RGBErrors currentError) {
         if (x<width-1)

@@ -8,6 +8,14 @@ public class RandomSignalNoiseApproximation extends SignalNoiseApproximation {
 
     private double noiseRange = 0.1;
 
+    public RandomSignalNoiseApproximation() {
+        super();
+    }
+
+    public RandomSignalNoiseApproximation(int numberOfColorsPaletteLevels) {
+        super(numberOfColorsPaletteLevels);
+    }
+
     @Override
     Color calculateColorWithNoise(Color color, int x, int y) {
         double random = Math.random();

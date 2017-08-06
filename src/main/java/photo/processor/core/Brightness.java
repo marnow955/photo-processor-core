@@ -3,15 +3,10 @@ package photo.processor.core;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Brightness implements PhotoProcessor{
-
-    private BufferedImage image;
-    private BufferedImage resultImg;
-    private int width;
-    private int height;
+public class Brightness extends PhotoProcessor{
 
     private int lutBrightnessRate;
-    private int[] LUTTable;
+    private LUTTable lutTable;
 
     public Brightness() {
         lutBrightnessRate = 0;
@@ -22,41 +17,22 @@ public class Brightness implements PhotoProcessor{
     }
 
     @Override
-    public BufferedImage getTransformedImage(BufferedImage image) {
-        init(image);
-        transform();
-        return resultImg;
+    protected void init(BufferedImage image) {
+        super.init(image);
+        lutTable = new LUTTable(this::lutCondition);
     }
 
-    private void init(BufferedImage image) {
-        this.image = image;
-        width = image.getWidth();
-        height = image.getHeight();
-        resultImg = new BufferedImage(width, height, image.getType());
-        makeLUTTable();
+    private double lutCondition(int index) {
+        return index + lutBrightnessRate;
     }
 
-    private void makeLUTTable() {
-        LUTTable = new int[256];
-        for(int i=0; i<256; i++) {
-            double value = i + lutBrightnessRate;
-            if (value> 255){
-                LUTTable[i] = 255;
-            } else if (value < 0) {
-                LUTTable[i] = 0;
-            } else {
-                LUTTable[i] = (int) value;
-            }
-        }
-    }
-
-    private void transform() {
+    protected void transform() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 Color color = new Color(image.getRGB(x, y));
-                int r = LUTTable[color.getRed()];
-                int g = LUTTable[color.getGreen()];
-                int b = LUTTable[color.getBlue()];
+                int r = lutTable.getValue(color.getRed());
+                int g = lutTable.getValue(color.getGreen());
+                int b = lutTable.getValue(color.getBlue());
                 Color resultColor = new Color(r, g, b);
                 resultImg.setRGB(x, y, resultColor.getRGB());
             }

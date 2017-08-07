@@ -53,15 +53,7 @@ public class HistogramEqualization extends PhotoProcessor {
 
     @Override
     protected void transform() {
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                Color color = new Color(image.getRGB(x, y));
-                int r = redLUTTable.getValue(color.getRed());
-                int g = greenLUTTable.getValue(color.getGreen());
-                int b = blueLUTTable.getValue(color.getBlue());
-                Color resultColor = new Color(r, g, b);
-                resultImg.setRGB(x, y, resultColor.getRGB());
-            }
-        }
+        LUTTable[] rgbLUTTable = {redLUTTable, greenLUTTable, blueLUTTable};
+        resultImg = LUTTable.getTransformedImage(image, rgbLUTTable);
     }
 }

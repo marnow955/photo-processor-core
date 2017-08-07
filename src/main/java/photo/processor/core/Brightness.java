@@ -28,15 +28,7 @@ public class Brightness extends PhotoProcessor{
 
     @Override
     protected void transform() {
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                Color color = new Color(image.getRGB(x, y));
-                int r = lutTable.getValue(color.getRed());
-                int g = lutTable.getValue(color.getGreen());
-                int b = lutTable.getValue(color.getBlue());
-                Color resultColor = new Color(r, g, b);
-                resultImg.setRGB(x, y, resultColor.getRGB());
-            }
-        }
+        LUTTable[] rgbLUTTable = {lutTable, lutTable, lutTable};
+        resultImg = LUTTable.getTransformedImage(image, rgbLUTTable);
     }
 }

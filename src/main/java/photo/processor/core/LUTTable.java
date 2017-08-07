@@ -21,4 +21,7 @@ class LUTTable {
         return lutTable[index];
     }
 
+    void setValue(int index, int value) {
+        lutTable[index] = value;
+    }
 }

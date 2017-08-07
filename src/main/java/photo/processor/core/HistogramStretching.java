@@ -37,22 +37,22 @@ public class HistogramStretching extends PhotoProcessor {
                 int r = color.getRed();
                 int g = color.getGreen();
                 int b = color.getBlue();
-                if (r<minRValue){
+                if (r < minRValue) {
                     minRValue = r;
                 }
-                if (r>maxRValue){
+                if (r > maxRValue) {
                     maxRValue = r;
                 }
-                if (g<minGValue){
+                if (g < minGValue) {
                     minGValue = g;
                 }
-                if (g>maxGValue){
+                if (g > maxGValue) {
                     maxGValue = g;
                 }
-                if (b<minBValue){
+                if (b < minBValue) {
                     minBValue = b;
                 }
-                if (b>maxBValue){
+                if (b > maxBValue) {
                     maxBValue = b;
                 }
             }
@@ -60,15 +60,15 @@ public class HistogramStretching extends PhotoProcessor {
     }
 
     private double redLUTCondition(int index) {
-        return (255.0 / (maxRValue-minRValue))*(index-minRValue);
+        return (255.0 / (maxRValue - minRValue)) * (index - minRValue);
     }
 
     private double greenLUTCondition(int index) {
-        return (255.0 / (maxGValue-minGValue))*(index-minGValue);
+        return (255.0 / (maxGValue - minGValue)) * (index - minGValue);
     }
 
     private double blueLUTCondition(int index) {
-        return (255.0 / (maxBValue-minBValue))*(index-minBValue);
+        return (255.0 / (maxBValue - minBValue)) * (index - minBValue);
     }
 
     @Override

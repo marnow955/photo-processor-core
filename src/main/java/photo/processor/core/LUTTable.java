@@ -8,9 +8,9 @@ class LUTTable {
 
     LUTTable(LUTEquation equationValue) {
         lutTable = new int[256];
-        for(int i=0; i<256; i++) {
+        for (int i = 0; i < 256; i++) {
             double value = equationValue.getLUTEqationValue(i);
-            if (value> 255){
+            if (value > 255) {
                 lutTable[i] = 255;
             } else if (value < 0) {
                 lutTable[i] = 0;

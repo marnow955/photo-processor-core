@@ -1,6 +1,5 @@
 package photo.processor.core;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Contrast extends PhotoProcessor {
@@ -23,7 +22,7 @@ public class Contrast extends PhotoProcessor {
     }
 
     private double lutCondition(int index) {
-        return lutContrastRate*(index-255/2) + (255/2);
+        return lutContrastRate * (index - 255 / 2) + (255 / 2);
     }
 
     @Override

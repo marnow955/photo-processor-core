@@ -11,8 +11,6 @@ import java.awt.image.DataBufferByte;
 import java.io.File;
 import java.io.IOException;
 
-import static org.junit.Assert.*;
-
 public class FloydSteinbergDitheringTest {
 
     private BufferedImage originalImage;

@@ -1,9 +1,8 @@
 package photo.processor.core;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Brightness extends PhotoProcessor{
+public class Brightness extends PhotoProcessor {
 
     private int lutBrightnessRate;
     private LUTTable lutTable;

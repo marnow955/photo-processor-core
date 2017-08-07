@@ -21,9 +21,9 @@ public class SineSignalNoiseApproximation extends SignalNoiseApproximation {
     @Override
     Color calculateColorWithNoise(Color color, int x, int y) {
         double noiseRate = aRate * Math.sin(alfaRate * x) * Math.sin(betaRate * y);
-        int r = validate((int)(color.getRed() + noiseRate));
-        int g = validate((int)(color.getGreen() + noiseRate));
-        int b = validate((int)(color.getBlue() + noiseRate));
+        int r = validate((int) (color.getRed() + noiseRate));
+        int g = validate((int) (color.getGreen() + noiseRate));
+        int b = validate((int) (color.getBlue() + noiseRate));
         return new Color(r, g, b);
     }
 }

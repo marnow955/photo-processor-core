@@ -1,6 +1,5 @@
 package photo.processor.core;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Gamma extends PhotoProcessor {

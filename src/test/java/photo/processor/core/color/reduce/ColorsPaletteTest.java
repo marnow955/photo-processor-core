@@ -2,11 +2,11 @@ package photo.processor.core.color.reduce;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import photo.processor.core.color.reduce.ColorsPalette;
 
 import java.awt.*;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class ColorsPaletteTest {
 

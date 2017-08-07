@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 class LUTTable {
+
     private int[] lutTable;
 
     LUTTable(LUTEquation equationValue) {

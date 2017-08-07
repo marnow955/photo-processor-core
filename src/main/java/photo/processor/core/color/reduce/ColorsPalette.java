@@ -42,15 +42,15 @@ public class ColorsPalette {
 
     private void generatePalette() {
         int numberOfColors = (int) Math.pow(numberOfLevels, 3);
-        int increment = 255 / (numberOfLevels - 1);
+        int increment = 255/(numberOfLevels - 1);
         palette = new Color[numberOfColors];
         int index = 0;
         for (int i = 0; i < numberOfLevels; i++) {
-            int r = i == numberOfLevels - 1 ? 255 : i * increment;
+            int r = i == numberOfLevels - 1 ? 255 : i*increment;
             for (int j = 0; j < numberOfLevels; j++) {
-                int g = j == numberOfLevels - 1 ? 255 : j * increment;
+                int g = j == numberOfLevels - 1 ? 255 : j*increment;
                 for (int k = 0; k < numberOfLevels; k++) {
-                    int b = k == numberOfLevels - 1 ? 255 : k * increment;
+                    int b = k == numberOfLevels - 1 ? 255 : k*increment;
                     palette[index] = new Color(r, g, b);
                     index++;
                 }

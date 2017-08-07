@@ -15,9 +15,9 @@ public class HistogramEqualization extends PhotoProcessor {
     protected void init(BufferedImage image) {
         super.init(image);
         ImageHistogram histogram = new ImageHistogram(image);
-        redDistribution = new ImageProbabilityDistribution(histogram.getRedHistogram(), height * width);
-        greenDistribution = new ImageProbabilityDistribution(histogram.getGreenHistogram(), height * width);
-        blueDistribution = new ImageProbabilityDistribution(histogram.getBlueHistogram(), height * width);
+        redDistribution = new ImageProbabilityDistribution(histogram.getRedHistogram(), height*width);
+        greenDistribution = new ImageProbabilityDistribution(histogram.getGreenHistogram(), height*width);
+        blueDistribution = new ImageProbabilityDistribution(histogram.getBlueHistogram(), height*width);
         redLUTTable = new LUTTable(this::redLUTCondition);
         greenLUTTable = new LUTTable(this::greenLUTCondition);
         blueLUTTable = new LUTTable(this::blueLUTCondition);
@@ -29,7 +29,7 @@ public class HistogramEqualization extends PhotoProcessor {
         do {
             firstNonZeroDistribution = redDistribution.getValue(i++);
         } while (firstNonZeroDistribution == 0);
-        return ((redDistribution.getValue(index) - firstNonZeroDistribution) / (1 - firstNonZeroDistribution)) * 255;
+        return ((redDistribution.getValue(index) - firstNonZeroDistribution)/(1 - firstNonZeroDistribution))*255;
     }
 
     private double greenLUTCondition(int index) {
@@ -38,7 +38,7 @@ public class HistogramEqualization extends PhotoProcessor {
         do {
             firstNonZeroDistribution = greenDistribution.getValue(i++);
         } while (firstNonZeroDistribution == 0);
-        return ((greenDistribution.getValue(index) - firstNonZeroDistribution) / (1 - firstNonZeroDistribution)) * 255;
+        return ((greenDistribution.getValue(index) - firstNonZeroDistribution)/(1 - firstNonZeroDistribution))*255;
     }
 
     private double blueLUTCondition(int index) {
@@ -47,7 +47,7 @@ public class HistogramEqualization extends PhotoProcessor {
         do {
             firstNonZeroDistribution = blueDistribution.getValue(i++);
         } while (firstNonZeroDistribution == 0);
-        return ((blueDistribution.getValue(index) - firstNonZeroDistribution) / (1 - firstNonZeroDistribution)) * 255;
+        return ((blueDistribution.getValue(index) - firstNonZeroDistribution)/(1 - firstNonZeroDistribution))*255;
     }
 
     @Override

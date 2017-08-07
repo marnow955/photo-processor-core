@@ -60,15 +60,15 @@ public class HistogramStretching extends PhotoProcessor {
     }
 
     private double redLUTCondition(int index) {
-        return (255.0 / (maxRValue - minRValue)) * (index - minRValue);
+        return (255.0/(maxRValue - minRValue))*(index - minRValue);
     }
 
     private double greenLUTCondition(int index) {
-        return (255.0 / (maxGValue - minGValue)) * (index - minGValue);
+        return (255.0/(maxGValue - minGValue))*(index - minGValue);
     }
 
     private double blueLUTCondition(int index) {
-        return (255.0 / (maxBValue - minBValue)) * (index - minBValue);
+        return (255.0/(maxBValue - minBValue))*(index - minBValue);
     }
 
     @Override

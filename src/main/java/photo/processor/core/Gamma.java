@@ -22,7 +22,7 @@ public class Gamma extends PhotoProcessor {
     }
 
     private int lutCondition(int index) {
-        return (int) (255 * Math.pow((index / 255.0), (1 / gammaRate)));
+        return (int) (255*Math.pow((index/255.0), (1/gammaRate)));
     }
 
     @Override

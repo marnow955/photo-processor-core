@@ -3,6 +3,7 @@ package photo.processor.core.color.reduce;
 import java.awt.*;
 
 public class RGBErrors {
+
     private int r;
     private int g;
     private int b;

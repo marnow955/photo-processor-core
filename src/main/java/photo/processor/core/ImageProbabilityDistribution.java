@@ -1,6 +1,7 @@
 package photo.processor.core;
 
 class ImageProbabilityDistribution {
+
     private double[] table;
 
     ImageProbabilityDistribution(LUTTable histogram, int dataSize) {
@@ -10,7 +11,7 @@ class ImageProbabilityDistribution {
             for (int j = 0; j <= i; j++) {
                 sum += histogram.getValue(j);
             }
-            table[i] = sum / dataSize;
+            table[i] = sum/dataSize;
         }
     }
 

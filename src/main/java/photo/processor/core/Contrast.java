@@ -26,6 +26,7 @@ public class Contrast extends PhotoProcessor {
         return lutContrastRate*(index-255/2) + (255/2);
     }
 
+    @Override
     protected void transform() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {

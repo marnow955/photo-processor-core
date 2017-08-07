@@ -26,6 +26,7 @@ public class Brightness extends PhotoProcessor{
         return index + lutBrightnessRate;
     }
 
+    @Override
     protected void transform() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {

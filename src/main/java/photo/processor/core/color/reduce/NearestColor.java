@@ -16,6 +16,7 @@ public class NearestColor extends PhotoProcessor {
         palette = new ColorsPalette(numberOfColorsPaletteLevels);
     }
 
+    @Override
     protected void transform() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {

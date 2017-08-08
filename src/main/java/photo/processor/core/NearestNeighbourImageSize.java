@@ -4,28 +4,28 @@ import java.awt.image.BufferedImage;
 
 public class NearestNeighbourImageSize extends PhotoProcessor {
 
-    private int width;
-    private int height;
-    private double ratioX;
-    private double ratioY;
+    protected int newWidth;
+    protected int newHeight;
+    protected double ratioX;
+    protected double ratioY;
 
-    public NearestNeighbourImageSize(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public NearestNeighbourImageSize(int newWidth, int newHeight) {
+        this.newWidth = newWidth;
+        this.newHeight = newHeight;
     }
 
     @Override
     protected void init(BufferedImage image) {
-        this.image = image;
-        resultImg = new BufferedImage(width, height, image.getType());
-        ratioX = (double) image.getWidth()/width;
-        ratioY = (double) image.getHeight()/height;
+        super.init(image);
+        resultImg = new BufferedImage(newWidth, newHeight, image.getType());
+        ratioX = (double) image.getWidth()/newWidth;
+        ratioY = (double) image.getHeight()/newHeight;
     }
 
     @Override
     protected void transform() {
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
+        for (int y = 0; y < newHeight; y++) {
+            for (int x = 0; x < newWidth; x++) {
                 int originX = (int) (x*ratioX);
                 int originY = (int) (y*ratioY);
                 int rgb = image.getRGB(originX, originY);

@@ -6,7 +6,7 @@
 
     <groupId>com.github.marnow955</groupId>
     <artifactId>photo-processor-core</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <developers>

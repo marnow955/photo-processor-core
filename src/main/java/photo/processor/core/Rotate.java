@@ -21,6 +21,7 @@ public class Rotate extends PhotoProcessor {
         super.init(image);
         resultHeight = width;
         resultWidth = height;
+        resultImg = new BufferedImage(resultWidth, resultHeight, image.getType());
     }
 
     @Override

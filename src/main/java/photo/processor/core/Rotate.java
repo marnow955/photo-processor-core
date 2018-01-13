@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class Rotate extends PhotoProcessor {
 
     public enum Direction {
-        RIGHT, LEFT;
+        RIGHT, LEFT
     }
 
     private int resultWidth;

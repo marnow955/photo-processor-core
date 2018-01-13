@@ -1,7 +1,5 @@
 package photo.processor.core;
 
-import java.awt.image.BufferedImage;
-
 public class Flip extends PhotoProcessor {
 
     public enum Orientation {

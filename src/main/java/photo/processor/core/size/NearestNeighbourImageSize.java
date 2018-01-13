@@ -1,13 +1,15 @@
-package photo.processor.core;
+package photo.processor.core.size;
+
+import photo.processor.core.PhotoProcessor;
 
 import java.awt.image.BufferedImage;
 
 public class NearestNeighbourImageSize extends PhotoProcessor {
 
-    protected int newWidth;
-    protected int newHeight;
-    protected double ratioX;
-    protected double ratioY;
+    int newWidth;
+    int newHeight;
+    double ratioX;
+    double ratioY;
 
     public NearestNeighbourImageSize(int newWidth, int newHeight) {
         this.newWidth = newWidth;

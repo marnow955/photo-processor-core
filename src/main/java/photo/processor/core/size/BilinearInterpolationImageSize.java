@@ -1,4 +1,4 @@
-package photo.processor.core;
+package photo.processor.core.size;
 
 import photo.processor.core.color.reduce.RGBValuesValidator;
 
